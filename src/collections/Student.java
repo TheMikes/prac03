@@ -1,6 +1,6 @@
 package collections;
 
-public class Student {
+public class Student implements Comparable<Student> {
     private String name;
     private int grade;
 
@@ -24,6 +24,7 @@ public class Student {
     public Student(String name, int grade) {
         this.name = name;
         this.grade = grade;
+
     }
 
     public int getGrade() {
@@ -40,5 +41,10 @@ public class Student {
 
     public void setName(String newName) {
         name = newName;
+    }
+
+    @Override
+    public int compareTo(Student student) {
+        return this.name.compareTo(student.name);
     }
 }
